@@ -15,7 +15,7 @@ class Api::PostsController < ApplicationController
   end
 
   def show
-    @post = find_game
+    @post = find_post
     render json: @post
   end
 
@@ -28,7 +28,7 @@ class Api::PostsController < ApplicationController
   end
 
   def destroy
-    @post = find_game
+    @post = find_post 
     if @post.destroy
       render json: { message: "Post deleted"}, status: 204
     else
